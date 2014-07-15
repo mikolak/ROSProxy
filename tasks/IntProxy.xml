@@ -1,0 +1,34 @@
+<Task>
+	<!-- reference task information -->
+	<Reference>
+		<Author>
+			<name>Maciej Stefanczyk</name>
+			<link></link>
+		</Author>
+		
+		<Description>
+			<brief>IntProxy ROS connector</brief>
+			<full>Test task for data exchange between DisCODe and ROS</full>	
+		</Description>
+	</Reference>
+	
+	<!-- task definition -->
+	<Subtasks>
+		<Subtask name="Main">
+			<Executor name="Processing"  period="1">
+				<Component name="Proxy" type="ROS:IntProxy" priority="1" bump="0">
+					<param name="mode.loop">1</param>
+				</Component>
+			</Executor>
+		</Subtask>	
+	
+	</Subtasks>
+	
+	<!-- pipes connecting datastreams -->
+	<DataStreams>
+	<!--	<Source name="Sequence.out_img">
+			<sink>Window.in_img</sink>		
+		</Source>-->
+	</DataStreams>
+</Task>
+
